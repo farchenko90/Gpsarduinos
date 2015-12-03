@@ -1,0 +1,5 @@
+App/Http/Midlleware 
+
+protected $except = [
+    'api/*',
+];

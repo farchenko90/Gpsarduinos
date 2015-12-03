@@ -1,0 +1,148 @@
+<section class="content">
+	
+	<div ng-controller="empleadoController" class="content-wrapper container1" style="background-color: white">
+	
+		<div class="row">
+
+			<section class="content"> 
+				<div class="box box-default" style="margin-right: -5%">
+					<div class="box-header with-border">
+						<h3 class="box-title">{{title}}</h3>
+						<div class="box-tools pull-right">
+	                		<button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+	              		</div>
+					</div>
+
+					<div class="box-body">
+						<div class="row">
+							<div class="col-md-6">
+								<div class="input-group">
+				                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
+				                    <input type="text" class="form-control" placeholder="Nombres" name="nombres" >
+                  				</div>
+							</div>	
+							<div class="col-md-6">
+								<div class="input-group">
+				                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
+				                    <input type="text" class="form-control" placeholder="Apellidos" name="apellidos">
+                  				</div>
+							</div>
+						</div>
+						<div class="row" style="padding-top: 2%">
+							<div class="col-md-6">
+								<div class="input-group">
+				                    <span class="input-group-addon"><i class="fa fa-creative-commons"></i></span>
+				                    <input type="number" class="form-control" placeholder="Cedula" name="cedula">
+                  				</div>
+							</div>
+							<div class="col-md-6">
+								<div class="input-group">
+				                    <span class="input-group-addon"><i class="fa fa-street-view"></i></span>
+				                    <input type="text" class="form-control" placeholder="Direccion" name="direccion">
+                  				</div>
+							</div>	
+						</div>
+
+						<div class="row" style="padding-top: 2%">
+							<div class="col-md-6">
+								<div class="input-group">
+									<div class="input-group-addon">
+                        				<i class="fa fa-phone"></i>
+                      				</div>
+                      				<input type="text" class="form-control" data-inputmask='"mask": "(999) 999-9999"' data-mask placeholder="Telefono" name="telefono">
+                    			</div>
+							</div>
+							<div class="col-md-6">
+								<div class="input-group">
+									<div class="input-group-addon">
+                        				<i class="fa fa-mobile"></i>
+                      				</div>
+                      				<input type="text" class="form-control" data-inputmask='"mask": "(999) 999-9999"' data-mask placeholder="Celular" name="celular">
+                    			</div>
+							</div>
+						</div>
+						<div class="row" style="padding-top: 2%">
+							<div class="col-md-6">
+								<div class="input-group">
+				                    <span class="input-group-addon"><i class="fa fa-motorcycle"></i></span>
+				                    <input type="text" class="form-control" placeholder="Placa de la motocicleta" name="placa">
+                  				</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<div class="input-group">
+										<label>TIPO</label>
+				                    	<select class="form-control" style="margin-left: 30%;margin-top: -16%" name="tipo">
+				                    		<option>SECRETARIA</option>
+				                    		<option>MENSAJERO</option>
+				                    		<option>SUPERADMIN</option>
+				                    	</select>
+                  					</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="row" style="padding-top: 2%">
+							<div class="col-md-6">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+				                    <input type="date" class="form-control" name="fechanac">
+                  				</div>
+							</div>
+							<div class="col-md-6">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+				                    <input type="date" class="form-control" name="fechaingreso">
+                  				</div>
+							</div>
+						</div>
+
+						<div class="row" style="padding-top: 2%">
+							<div class="col-md-6">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-sign-in"></i></span>
+				                    <input type="text" class="form-control" placeholder="Login" name="login">
+                  				</div>
+							</div>
+							<div class="col-md-6">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-key"></i></span>
+				                    <input type="text" class="form-control" placeholder="Clave" name="clave">
+                  				</div>
+							</div>
+						</div>
+
+						<div class="row" style="padding-top: 2%">
+							<div class="col-md-6">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
+				                    <input type="text" class="form-control" placeholder="Correo" name="correo">
+                  				</div>
+							</div>
+						</div>
+
+						<div class="row" style="padding-top: 2%">
+							<div class="col-md-6">
+								<a class="btn btn-app" ng-click="guardarempleado()">
+                    				<i class="fa fa-save"></i> Guardar
+                  				</a>	
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</section>
+		</div>
+	
+	</div>
+			
+
+</section>
+<script src="plugins/input-mask/jquery.inputmask.js"></script>
+<style type="text/css" media="screen">
+	.container1{
+		margin: 0;
+		padding: 0;
+		border: 0;
+	}
+</style>

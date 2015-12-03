@@ -1,0 +1,200 @@
+<div ng-controller="perfilController" class="content-wrapper container1" style="background-color: white">
+	<section class="content">
+
+		<div class="row">
+			<div class="col-md-3">
+				<div class="box box-primary" style="width: 105%">
+					<div class="box-body box-profile">
+						<div id="image" style="width: 98%; height: 150px; top: 2em;">
+							
+						</div>
+						<!--<img class="profile-user-img img-responsive img-circle" src="image/elsy.jpg" alt="User profile picture" style="width: 40%">-->
+						<h3 class="profile-username text-center">{{usuario}}</h3>
+						<p class="text-muted text-center">{{tipo}}</p>
+
+						<div class="" style="padding-left: 38%">
+							<div class="input-group">
+								<span class="file-input btn btn-block btn-primary btn-file" >
+									<i class="fa fa-camera"></i>
+                					<input id="files" type="file" uploader-model="perfil.foto">
+            					</span>
+            				</div>
+            			</div>
+						
+						<a id="cambiar" ng-click="cambiarfoto()" hidden style="display: none;padding-left: 25%" href="javascript:;">
+                  			<li class="fa fa-repeat">  Actualizar Foto</li>
+                  		</a>
+
+						</br>
+
+						<ul class="list-group list-group-unbordered">
+		                    <li class="list-group-item">
+		                    	<b class="fa fa-envelope-o"></b> <a class="pull-right">{{correo}}</a>
+		                    </li>
+		                    <li class="list-group-item">
+		                      	<b class="fa fa-calendar"></b> <a class="pull-right">{{fechanacimiento}}</a>
+		                    </li>
+		                    <li class="list-group-item">
+		                      	<b class="fa fa-mobile"></b> <a class="pull-right">{{celular}}</a>
+		                    </li>
+                  		</ul>
+                  		
+                  		
+                  		
+                  		
+                  		
+					</div>
+				</div>
+			</div>
+	
+			<div class="col-md-9" style="padding-left: 2%">
+				<div class="nav-tabs-custom">
+					<ul class="nav nav-tabs">
+						<li class="active"><a href="activity" data-toggle="tab">Actualizar</a></li>
+					</ul>
+					<div class="tab-content">
+						<div class="active tab-pane" id="activity">
+							<h5>Actualizar Perfil</h5>
+							<div class="row">
+								<div class="col-md-6">
+									<div class="input-group">
+					                    <span class="input-group-addon"><i class="fa fa-sign-in"></i></span>
+					                    <input type="text" class="form-control" value="{{usuario}}" name="usuario" >
+                  					</div>
+								</div>
+								<div class="col-md-6">
+									<div class="input-group">
+					                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
+					                    <input type="text" class="form-control" value="{{nombres}}" name="nombres" >
+                  					</div>
+								</div>
+							</div>
+							<div class="row" style="padding-top: 2%">
+								<div class="col-md-6">
+									<div class="input-group">
+										<span class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
+					                    <input type="text" class="form-control" value="{{correo}}" name="correo" >
+									</div>
+								</div>
+								<div class="col-md-6" >
+									<div class="input-group">
+										<span class="input-group-addon"><i class="fa fa-mobile"></i></span>
+					                    <input type="text" class="form-control" value="{{celular}}" name="celular" >
+									</div>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-md-6" >
+									<div class="input-group">
+										<input type="hidden" class="form-control" value="{{fechanacimiento}}" name="fechanac" >
+									</div>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-md-6" >
+									<div class="input-group">
+										<input type="hidden" class="form-control" value="{{ruta}}" name="ruta" >
+									</div>
+								</div>
+							</div>
+
+							<div class="row" style="padding-top: 2%">
+								<div class="col-md-6">
+									<a class="btn btn-app" ng-click="actualizarempleado()">
+                    					<i class="fa fa-save"></i> Actualizar
+                  					</a>	
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+	</section>
+		
+</div>
+
+
+
+<style type="text/css" media="screen">
+	
+	.container1{
+		margin: 0;
+		padding: 0;
+		border: 0;
+	}
+	.btn-file {
+	  position: relative;
+	  overflow: hidden;
+	}
+	.btn-file input[type=file] {
+	  position: absolute;
+	  top: 0;
+	  right: 0;
+	  min-width: 100%;
+	  min-height: 100%;
+	  font-size: 100px;
+	  text-align: right;
+	  filter: alpha(opacity=0);
+	  opacity: 0;
+	  background: red;
+	  cursor: inherit;
+	  display: block;
+	}
+	input[readonly] {
+	  background-color: white !important;
+	  cursor: text !important;
+	}
+</style>
+
+<script>
+
+	function archivo(evt) {
+		var files = evt.target.files; // FileList object
+
+        //Obtenemos la imagen del campo "file". 
+        for (var i = 0, f; f = files[i]; i++) {
+            //Solo admitimos imágenes.
+            if (!f.type.match('image.*')) {
+                continue;
+            }
+
+            var reader = new FileReader();
+
+            reader.onload = (function(theFile) {
+                return function(e) {
+                    // Creamos la imagen.
+                    document.getElementById("image").innerHTML = ['<img class="profile-user-img img-responsive img-circle" alt="User profile picture" id="img" style="width: 40%" src="', e.target.result, '" title="', escape(theFile.name), '"/>'].join('');
+                };
+            })(f);
+            reader.readAsDataURL(f);
+        }
+    }
+    
+    document.getElementById('files').addEventListener('change', archivo, false);
+
+    $(':file').change(function(){
+        //obtenemos un array con los datos del archivo
+        var file = $("#files")[0].files[0];
+        //obtenemos el nombre del archivo
+        var fileName = file.name;
+        //obtenemos la extensión del archivo
+        //document.getElementById("nombreImagen").value=fileName;
+        fileExtension = fileName.substring(fileName.lastIndexOf('.') + 1);
+        //obtenemos el tamaño del archivo
+        var fileSize = file.size;
+        //obtenemos el tipo de archivo image/png ejemplo
+        var fileType = file.type;
+        
+        $("#cambiar").show();
+        //mensaje con la información del archivo
+        // alert("<span class='info'>Archivo para subir: "+fileName+", peso total: "+fileSize+" bytes.</span>");
+    });
+
+</script>

@@ -1,0 +1,27 @@
+<div ng-controller="inicioController" >
+	<div class="login-box">
+		    <div class="login-logo">
+        	<a href=""><b>{{gps}}</b>{{title}}</a>
+      	</div><!-- /.login-logo -->
+      	<div class="login-box-body">
+      		<p class="login-box-msg">Login</p>
+      		<form>
+      			<div class="form-group has-feedback">
+		            <input type="email" class="form-control" placeholder="Usuario" name="user">
+		            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+		        </div>
+		        <div class="form-group has-feedback">
+            		<input type="password" class="form-control" placeholder="Clave" name="pass">
+            		<span class="glyphicon glyphicon-lock form-control-feedback"></span>
+          	</div>
+          		<div class="row">
+            		<div class="col-xs-4">
+	              		<button type="button" class="btn btn-primary btn-block btn-flat"
+                    ng-click="ingresar();">Ingresar</button>
+	            	</div><!-- /.col -->
+          		</div>
+      		</form>
+      		<a href="">Recordar Contraseña</a><br>
+      	</div>
+	</div>
+</div>
