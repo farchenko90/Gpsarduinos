@@ -1,3 +1,3 @@
 <?php 
 
-	Route::resource('api/cliente', 'UsuariosController'); 
+	Route::resource('api/cliente', 'clienteController'); 

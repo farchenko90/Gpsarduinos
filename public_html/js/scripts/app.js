@@ -8,6 +8,9 @@ var app;
             
             
             $routeProvider
+                .when('/configuracion/clientes', {
+                    templateUrl: 'pages/configuracion/cliente.html'
+                })
                 .when('/configuracion/perfil', {
                     templateUrl: 'pages/configuracion/perfil.html'
                 })

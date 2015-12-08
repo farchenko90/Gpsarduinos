@@ -17,7 +17,7 @@ app.controller('empleadoController', function ($scope, empleadoService) {
 		var clave = document.getElementsByName('clave')[0].value;
 		var correo = document.getElementsByName('correo')[0].value;
 
-		if(nombre =="" || apellido == "" || cedula =="" || direccion =="" || telefono =="" ||
+		if(nombre =="" || apellido == "" || cedula =="" || direccion =="" || 
 			celular =="" || tipo =="" || fechanac =="" || fechaing =="" ||
 			 login =="" || clave ==""){
 			alert('Los campos son obligatorios');

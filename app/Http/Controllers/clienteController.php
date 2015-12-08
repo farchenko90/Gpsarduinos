@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\JsonResponse;
+use Crypt;
+use App\cliente;
 
 class clienteController extends Controller
 {
@@ -37,7 +40,22 @@ class clienteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try{
+            $data = $request->all();
+            $cliente = new cliente();
+            $cliente->cedula = $data['cedula'];
+            $cliente->nombreape = $data['nombreape'];
+            $cliente->direccion = $data['direccion'];
+            $cliente->celular = $data['celular'];
+            $cliente->telefono = $data['telefono'];
+            $cliente->fechanacimiento = $data['fechanacimiento'];
+            $cliente->login = $data['login'];
+            $cliente->clave = Crypt::encrypt($data['clave']);
+            $cliente->save();
+            return JsonResponse::create(array('message' => "Cliente Guardado Correctamente", "request" =>json_encode($data)), 200);
+        }catch (Exception $exc){
+            return JsonResponse::create(array('message' => "No se pudo guardar el cliente", "exception"=>$exc->getMessage(), "request" =>json_encode($data)), 401);
+        }
     }
 
     /**

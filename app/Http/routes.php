@@ -17,3 +17,4 @@ Route::get('/', function () {
 
 include 'Routes/routesUsuarios.php';
 include 'Routes/routesEmpleado.php';
+include 'Routes/routesCliente.php';

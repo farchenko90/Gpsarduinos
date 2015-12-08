@@ -1,0 +1,106 @@
+<section class="content" >
+	<div ng-controller="clienteController" class="content-wrapper container1">
+
+		<div class="row">
+			
+			<section class="content">
+				
+				<div class="box box-default" style="margin-right: -5%">
+					<div class="box-header with-border">
+						<h3 class="box-title">{{title}}</h3>
+						<div class="box-tools pull-right">
+	                		<button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+	              		</div>
+					</div>
+					<div class="box-body">
+    					<div class="row">
+    						<div class="col-md-6">
+								<div class="input-group">
+				                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
+				                    <input type="text" class="form-control" placeholder="Nombres obligatorio" name="nombrescliente" >
+                  				</div>
+							</div>
+							<div class="col-md-6">
+								<div class="input-group">
+				                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
+				                    <input type="text" class="form-control" placeholder="Apellidos obligatorio" name="apellidoscliente">
+                  				</div>
+							</div>
+    					</div>
+    					<div class="row" style="padding-top: 2%">
+							<div class="col-md-6">
+								<div class="input-group">
+				                    <span class="input-group-addon"><i class="fa fa-creative-commons"></i></span>
+				                    <input type="number" class="form-control" placeholder="Cedula obligatorio" name="cedulacliente">
+                  				</div>
+							</div>
+							<div class="col-md-6">
+								<div class="input-group">
+				                    <span class="input-group-addon"><i class="fa fa-street-view"></i></span>
+				                    <input type="text" class="form-control" placeholder="Direccion obligatorio" name="direccioncliente">
+                  				</div>
+							</div>	
+						</div>
+						<div class="row" style="padding-top: 2%">
+							<div class="col-md-6">
+								<div class="input-group">
+									<div class="input-group-addon">
+                        				<i class="fa fa-phone"></i>
+                      				</div>
+                      				<input type="number" class="form-control" data-inputmask='"mask": "(999) 999-9999"' data-mask placeholder="Telefono" name="telefonocliente">
+                    			</div>
+							</div>
+							<div class="col-md-6">
+								<div class="input-group">
+									<div class="input-group-addon">
+                        				<i class="fa fa-mobile"></i>
+                      				</div>
+                      				<input type="number" class="form-control" data-inputmask='"mask": "(999) 999-9999"' data-mask placeholder="Celular obligatorio" name="celularcliente">
+                    			</div>
+							</div>
+						</div>
+						<div class="row" style="padding-top: 2%">
+							<div class="col-md-6">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-sign-in"></i></span>
+				                    <input type="text" class="form-control" placeholder="Login obligatorio" name="logincliente">
+                  				</div>
+							</div>
+							<div class="col-md-6">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-key"></i></span>
+				                    <input type="text" class="form-control" placeholder="Clave obligatorio" name="clavecliente">
+                  				</div>
+							</div>
+						</div>
+						<div class="row" style="padding-top: 2%">
+							<div class="col-md-6">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+				                    <input type="date" class="form-control" name="fechacliente">
+                  				</div>
+							</div>
+						</div>
+						<div class="row" style="padding-top: 2%">
+							<div class="col-md-6">
+								<a class="btn btn-app" ng-click="guardarcliente()">
+                    				<i class="fa fa-save"></i> Guardar
+                  				</a>	
+							</div>
+						</div>
+  					</div>
+				</div>
+
+			</section>
+
+		</div>
+		
+	</div>
+</section>
+<style type="text/css" media="screen">
+	.container1{
+		margin: 0;
+		padding: 0;
+		border: 0;
+	}
+</style>
