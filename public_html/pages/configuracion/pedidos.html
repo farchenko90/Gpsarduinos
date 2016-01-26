@@ -1,0 +1,71 @@
+<section class="content" >
+	<div ng-controller="pedidoController" class="content-wrapper container1">
+
+		<div class="row">
+			
+			<section class="content">
+				
+				<div class="box box-default" style="margin-right: -5%">
+					<div class="box-header with-border">
+						<h3 class="box-title">{{title}}</h3>
+						<div class="box-tools pull-right">
+	                		<button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+	              		</div>
+					</div>
+					<div class="box-body">
+    					<div class="row">
+    						<div class="col-md-6">
+								<div class="input-group">
+				                    <span class="input-group-addon"><i class="fa fa-pencil-square-o"></i></span>
+				                    <input type="text" class="form-control" placeholder="Descripción" name="descripcion" >
+                  				</div>
+							</div>
+							<div class="col-md-6">
+								<div class="input-group">
+				                    <span class="input-group-addon"><i class="fa fa-location-arrow"></i></span>
+				                    <input type="text" class="form-control" placeholder="Dirección de origen" name="direccionorigen">
+                  				</div>
+							</div>
+    					</div>
+    					<div class="row" style="padding-top: 2%">
+							<div class="col-md-6">
+								<div class="input-group">
+				                    <span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
+				                    <input type="number" class="form-control" placeholder="Direccion de destino" name="cedulacliente">
+                  				</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<div class="input-group">
+										<label>TIPO DE ENVÍO</label>
+				                    	<select class="form-control" style="margin-left: 50%;margin-top: -16%" name="tipo">
+				                    		<option>PRIVADO</option>
+				                    		<option>PUBLICO</option>
+				                    	</select>
+                  					</div>
+								</div>
+							</div>
+						</div>
+						<div class="row" style="padding-top: 2%">
+							<div class="col-md-6">
+								<a class="btn btn-app" ng-click="guardarcliente()">
+                    				<i class="fa fa-save"></i> Guardar
+                  				</a>	
+							</div>
+						</div>
+  					</div>
+				</div>
+
+			</section>
+
+		</div>
+		
+	</div>
+</section>
+<style type="text/css" media="screen">
+	.container1{
+		margin: 0;
+		padding: 0;
+		border: 0;
+	}
+</style>

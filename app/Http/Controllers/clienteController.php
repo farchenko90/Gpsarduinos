@@ -19,7 +19,7 @@ class clienteController extends Controller
      */
     public function index()
     {
-        //
+        return cliente::All();
     }
 
     /**
@@ -66,7 +66,7 @@ class clienteController extends Controller
      */
     public function show($id)
     {
-        //
+        return cliente::find($id);
     }
 
     /**
@@ -102,4 +102,33 @@ class clienteController extends Controller
     {
         //
     }
+
+    /*
+    *   autenticamos si el cliente y clave son correctas
+    */
+    public function autenticarcliente(Request $request){
+        try{
+            $data = $request->all();
+            $user = cliente::select('id','cedula','nombreape','login','clave',
+                                'telefono','fechanacimiento','correo')
+                                ->where('login',$data['user'])
+                                ->first();
+            if (empty($user)){
+                return JsonResponse::create(array('message' => "100", "request" =>json_encode('Cliente no esta en el Sistema')), 200);
+            }   
+
+            $clave =   Crypt::decrypt($user["clave"]);
+
+            
+            if($data['clave'] != $clave){
+                return JsonResponse::create(array('message' => "200", "request" =>json_encode('Clave Incorrecta')), 200);
+            }
+
+            return JsonResponse::create($user);
+
+        }catch(Exception $ex){
+            return JsonResponse::create(array('message' => "No se puedo autenticar el usuario", "request" =>json_encode($data)), 401);
+        }
+    }
+
 }

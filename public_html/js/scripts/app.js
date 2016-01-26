@@ -17,6 +17,12 @@ var app;
                 .when('/configuracion/empleados', {
                     templateUrl: 'pages/configuracion/empleados.html'
                 })  
+                .when('/configuracion/pedidos', {
+                    templateUrl: 'pages/configuracion/pedidos.html'
+                })
+                .when('/configuracion/mapas', {
+                    templateUrl: 'pages/configuracion/mapa.html'
+                })
                 .when('/blanco', {
                     templateUrl: 'pages/blanco.html'
                 })

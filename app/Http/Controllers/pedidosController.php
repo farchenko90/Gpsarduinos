@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\JsonResponse;
+use pedidos;
 
 class pedidosController extends Controller
 {
@@ -16,7 +18,7 @@ class pedidosController extends Controller
      */
     public function index()
     {
-        //
+        return pedidos::All();
     }
 
     /**
@@ -37,7 +39,21 @@ class pedidosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try{
+            $data = $request->all();
+            $pedido = new pedidos();
+            $pedido->descripcion = $data['descripcion'];
+            $pedido->estado = $data['estado'];
+            $pedido->origen = $data['origen'];
+            $pedido->destino = $data['destino'];
+            $pedido->fecha = $data['fecha'];
+            $pedido->hora = $data['hora'];
+            $pedido->idcliente = $data['idcliente'];
+            $pedido->save();
+            return JsonResponse::create(array('message' => "Pedido Guardado Correctamente", "request" =>json_encode($data)), 200);
+        }catch (Exception $exc){
+            return JsonResponse::create(array('message' => "No se pudo guardar este pedido", "exception"=>$exc->getMessage(), "request" =>json_encode($data)), 401);
+        }
     }
 
     /**
@@ -48,7 +64,7 @@ class pedidosController extends Controller
      */
     public function show($id)
     {
-        //
+        return pedidos::find($id);
     }
 
     /**
